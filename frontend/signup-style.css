@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.corner-logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 200px;
+}
+
+.Signup-box {
+    background: white;
+    padding: 40px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 10px 10px 0px #7019db;
+}
+
+.box-logo {
+    width: 300px;
+    height: 60px;
+    margin-bottom: 10px;
+    padding-left: 50px;
+    
+    
+}
+
+.Signup-box h4 {
+    color: #000000;
+    font-size: 18px;
+    margin-bottom:20px;
+    font-weight: bold;
+}
+
+.Signup-box input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #e1e1e1;
+    border-radius: 20px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.Signup-box button {
+    width: 30%;
+    padding: 7px;
+    background: linear-gradient(135deg, #a357ff 0%, #403ced 100%);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.Signup-box button:hover {
+   
+    background: linear-gradient(135deg, #a357ff 0%, #403ced 100%);
+    transform: scale(1.05);
+}
+
+.Signup-box button:active {
+    transform: scale(0.97);
+background: linear-gradient(135deg, #a764f8 0%, #5653fa 100%);
+
+    
+}
+
+.Signup-box h5 {
+    color: #666;
+    font-size: 14px;
+}

@@ -1,0 +1,16 @@
+# Ignore DB and sensitive backend files
+backend/db.go
+
+# Ignore OS or editor junk files
+.DS_Store
+*.log
+*.tmp
+
+# Ignore config or secrets
+.env
+config.json
+
+# Optional: ignore Go build files
+*.exe
+*.out
+*.test
