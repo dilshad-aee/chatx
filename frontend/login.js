@@ -22,8 +22,11 @@ function login() {
     body: JSON.stringify({
       username: username,
       password: password
+
     })
   })
+
+
   .then(res => {
     if (!res.ok) {
       return res.text().then(text => { throw new Error(text); });
@@ -31,6 +34,8 @@ function login() {
     return res.json();
   })
   .then(data => {
+
+    localStorage.setItem("jwtToken",data.token)
     log.style.color = "green";
     log.textContent = "✅ Logged in as: " + data.username;
 
