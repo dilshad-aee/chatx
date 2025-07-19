@@ -1,6 +1,7 @@
 package main
 
 import (
+	"chatx/backend/utils"
 	"database/sql"
 	"encoding/json"
 	"net/http"
@@ -15,6 +16,11 @@ type User struct {
 type SafeUser struct {
 	ID       int    `json:"id"`
 	Username string `json:"username"`
+}
+
+type LoginResponse struct {
+	User  SafeUser `json:"user"`
+	Token string   `json:"token"`
 }
 
 func respondJson(w http.ResponseWriter, data interface{}, status int) {
@@ -95,10 +101,18 @@ func handleLogin(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	token, err := utils.GenerateToken(user.ID, user.Username)
+	if err != nil {
+		http.Error(w, "Failed to genarate token", http.StatusInternalServerError)
+		return
+	}
+
 	safeuser := SafeUser{
 		ID:       user.ID,
 		Username: user.Username,
 	}
-	respondJson(w, safeuser, http.StatusOK)
-
+	respondJson(w, LoginResponse{
+		User:  safeuser,
+		Token: token,
+	}, http.StatusOK)
 }
