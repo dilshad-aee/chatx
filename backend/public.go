@@ -15,6 +15,6 @@ var upgrader=websocket.Upgrader{
 }
 
 type Message struct{
-	ID :
+	ID : 
 
 }
